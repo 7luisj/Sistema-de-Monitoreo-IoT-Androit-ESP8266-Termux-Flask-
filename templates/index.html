@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Monitor IoT ESP8266</title>
+   
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
+
+    <!-- Librería Chart.js para la gráfica -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🌡️ Monitor de Temperatura IoT</h1>
+            <p class="status">Servidor local en Termux (Android)</p>
+        </header>
+
+        <!-- Tarjeta con la lectura actual -->
+        <div class="card">
+            <span style="margin-right:70px; color:#555;">Temperatura </span> <span style="margin-right:50px; color:#196473;" > Humedad </span>
+            <div class="temp-display">
+                <span id="tempValue">--</span>		<span class="unit"> °C</span> 
+		<span id="humedad">-- </span> 	<span id="h_per"> %</span>
+            </div>
+
+	
+            <div id="lastUpdated" class="status">Cargando datos...</div>
+
+	   </div>
+
+        <!-- Gráfica interactiva -->
+        <div class="chart-container">
+            <canvas id="tempChart"></canvas>
+        </div>
+    
+</div>
+
+<script src="{{ url_for('static', filename='js/script.js') }}"></script>
+
+</body>
+</html>
